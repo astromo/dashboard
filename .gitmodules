@@ -2,3 +2,8 @@
 	path = app/modules/dashboard-metrics
 	url = git@github.com:astromo/dashboard-metrics.git
 	branch = master
+
+[submodule "app/modules/dashboard-documentation"]
+	path = app/modules/dashboard-documentation
+	url = git@github.com:astromo/dashboard-documentation.git
+	branch = master
