@@ -1,0 +1,30 @@
+.astromo-icon-bar {
+
+  $slate: #2b3643;
+  $algae: #1caf9a;
+
+  @include icon-bar(
+    $bar-bg: $slate,
+    $bar-hover-color: $algae
+  );
+}
+
+.dashboard__sidenav {
+
+  .item {
+    text-align: left;
+    line-height: 16px;
+
+    i {
+      font-style: normal;
+      font-size: 16px;
+    }
+    label {
+      font-size: 13px;
+      padding-left: 5px;
+    }
+    i, label { display: inline-block; }
+
+  }
+
+}
