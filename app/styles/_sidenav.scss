@@ -1,11 +1,8 @@
 .astromo-icon-bar {
 
-  $slate: #2b3643;
-  $algae: #1caf9a;
-
   @include icon-bar(
-    $bar-bg: $slate,
-    $bar-hover-color: $algae
+    $bar-bg: $darker-slate,
+    $bar-hover-color: $green
   );
 }
 

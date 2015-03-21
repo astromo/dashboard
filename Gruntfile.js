@@ -284,17 +284,16 @@ module.exports = function (grunt) {
       options: {
         name: 'config',
         dest: '<%= yeoman.app %>/scripts/config.js',
-        wrap: true
+        wrap: true,
+        constants: {
+          'metricsPath': 'vendor/astromo-dashboard-metrics/app/'
+        }
       },
       dev: {
-        constants: {
 
-        }
       },
       prod: {
-        constants: {
 
-        }
       }
     },
 

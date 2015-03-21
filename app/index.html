@@ -27,18 +27,18 @@
     <script src="vendor/angular-route/angular-route.js"></script>
     <script src="vendor/ui-router/release/angular-ui-router.js"></script>
     <script src="vendor/angular-sanitize/angular-sanitize.js"></script>
-
-    <!-- metrics -->
-    <script src="vendor/astromo-dashboard-metrics/scripts/app.js"></script>
-    <script src="vendor/astromo-dashboard-metrics/scripts/controllers/main.js"></script>
-
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/dashboard.js -->
+    <script src="scripts/config.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/home.js"></script>
+
+    <!-- metrics -->
+    <script src="vendor/astromo-dashboard-metrics/app/scripts/app.js"></script>
+    <script src="vendor/astromo-dashboard-metrics/app/scripts/controllers/main.js"></script>
     <!-- endbuild -->
 </body>
 </html>

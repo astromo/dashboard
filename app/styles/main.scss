@@ -7,9 +7,11 @@
  * Astromo Components
  */
 
+@import '../vendor/astromo-styles/astromo.scss';
+
 // Home
 @import '_home.scss';
 @import '_sidenav.scss';
 
 // Metrics
-@import '../vendor/astromo-dashboard-metrics/styles/main.scss';
+@import '../vendor/astromo-dashboard-metrics/app/styles/metrics.scss';
