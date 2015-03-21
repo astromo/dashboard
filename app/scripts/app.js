@@ -1,11 +1,13 @@
 'use strict';
 
 angular
-  .module('dashboard', ['ngAnimate', 'ngMessages', 'ngRoute', 'ngSanitize', 'astromo.metrics',
-  'ui.router' ])
-  .constant('metricsPath', './vendor/astromo-dashboard-metrics')
+  .module('dashboard', [
+    'ngAnimate', 'ngMessages', 'ngRoute', 'ngSanitize', 'astromo.metrics',
+    'ui.router'
+  ])
   .config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider) {
 
+    $locationProvider.html5Mode(true);
     $urlMatcherFactoryProvider.strictMode(false);
 
     $stateProvider
@@ -13,7 +15,7 @@ angular
         abstract    : true,
         views       : {
           'sidenav' : {
-            templateUrl : 'partials/_sidenav.html'
+            templateUrl : 'views/partials/_sidenav.html'
           },
           'main' : {
             template   : '<div ui-view></div>',
@@ -27,5 +29,4 @@ angular
         controller  : 'dashboard.homeController'
       });
 
-      $locationProvider.html5Mode(true);
   });

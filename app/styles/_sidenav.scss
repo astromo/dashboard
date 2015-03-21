@@ -1,14 +1,14 @@
-.astromo-icon-bar {
-  @include icon-bar(
-    $bar-bg           : $darker-slate,
-    $bar-hover-color  : darken($darker-slate, 5),
-    $bar-active-color : $green,
-    $font-size        : 13px
-  );
-}
-
 .dashboard__sidenav {
   height: 100%;
+
+  .astromo-icon-bar {
+    @include icon-bar(
+      $bar-bg           : $darker-slate,
+      $bar-hover-color  : darken($darker-slate, 5),
+      $bar-active-color : $green,
+      $font-size        : 13px
+    );
+  }
 
   .item {
     line-height: 16px;
