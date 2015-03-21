@@ -1,17 +1,21 @@
 /**
  * Vendor Components
  */
-@import '../vendor/foundation/scss/foundation.scss';
+$header-font-family: 'Ubuntu', arial, sans-serif;
+@import '../vendor/foundation/scss/foundation';
 
 /**
  * Astromo Components
  */
 
-@import '../vendor/astromo-styles/astromo.scss';
+@import '../vendor/astromo-styles/astromo';
+
+// Dashboard
+@import 'dashboard';
+@import '_sidenav';
 
 // Home
-@import '_home.scss';
-@import '_sidenav.scss';
+@import '_home';
 
 // Metrics
-@import '../vendor/astromo-dashboard-metrics/app/styles/metrics.scss';
+@import '../vendor/astromo-dashboard-metrics/app/styles/metrics';

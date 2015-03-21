@@ -16,10 +16,10 @@ angular
             templateUrl : 'partials/_sidenav.html'
           },
           'main' : {
-            template : '<div ui-view></div>'
+            template   : '<div ui-view></div>',
+            controller : 'dashboard.mainController'
           }
-        },
-        controller  : 'dashboard.mainController'
+        }
       })
       .state('dashboard.home', {
         url         : '',
