@@ -3,7 +3,7 @@
 angular
   .module('dashboard', [
     'ngAnimate', 'ngMessages', 'ngRoute', 'ngSanitize', 'astromo.metrics',
-    'ui.router'
+    'astromo.docs', 'ui.router'
   ])
   .config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider) {
 
@@ -32,6 +32,11 @@ angular
         url         : '/metrics',
         templateUrl : 'modules/dashboard-metrics/views/index.html',
         controller  : 'metrics.mainController'
+      })
+      .state('dashboard.docs', {
+        url         : '/documentation',
+        templateUrl : 'modules/dashboard-documentation/views/index.html',
+        controller  : 'docs.mainController'
       });
 
   });
