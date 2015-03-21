@@ -68,6 +68,7 @@ module.exports = function (grunt) {
           open: false,
           middleware: function (connect) {
             return [
+              require('connect-modrewrite')(['^[^\\.]*$ /index.html [L]']),
               connect.static('.tmp'),
               connect.static(appConfig.app),
               require('grunt-connect-proxy/lib/utils').proxyRequest

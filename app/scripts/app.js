@@ -4,7 +4,7 @@ angular
   .module('dashboard', ['ngAnimate', 'ngMessages', 'ngRoute', 'ngSanitize', 'astromo.metrics',
   'ui.router' ])
   .constant('metricsPath', './vendor/astromo-dashboard-metrics')
-  .config(function ($stateProvider, $urlMatcherFactoryProvider) {
+  .config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider) {
 
     $urlMatcherFactoryProvider.strictMode(false);
 
@@ -27,4 +27,5 @@ angular
         controller  : 'dashboard.homeController'
       });
 
+      $locationProvider.html5Mode(true);
   });
