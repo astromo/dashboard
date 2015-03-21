@@ -27,6 +27,11 @@ angular
         url         : '',
         templateUrl : 'views/home.html',
         controller  : 'dashboard.homeController'
+      })
+      .state('dashboard.metrics', {
+        url         : '/metrics',
+        templateUrl : 'modules/dashboard-metrics/views/index.html',
+        controller  : 'metrics.mainController'
       });
 
   });
