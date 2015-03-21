@@ -6,13 +6,13 @@ $header-font-family: 'Ubuntu', arial, sans-serif;
 /**
  * Vendor Components
  */
-@import '../vendor/foundation/scss/foundation';
+@import '../../bower_components/foundation/scss/foundation';
 
 /**
  * Astromo Components
  */
 
-@import '../vendor/astromo-styles/astromo';
+@import '../../bower_components/astromo-styles/astromo';
 
 // Dashboard
 @import 'dashboard';
@@ -22,4 +22,4 @@ $header-font-family: 'Ubuntu', arial, sans-serif;
 @import '_home';
 
 // Metrics
-@import '../vendor/astromo-dashboard-metrics/app/styles/metrics';
+@import '../modules/dashboard-metrics/app/styles/metrics';

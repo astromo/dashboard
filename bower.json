@@ -1,16 +1,15 @@
 {
   "name": "dashboard",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "dependencies": {
-    "angular": "^1.3.0",
+    "angular": "~1.3.15",
     "angular-animate": "^1.3.0",
     "angular-messages": "^1.3.0",
     "angular-route": "^1.3.0",
     "angular-sanitize": "^1.3.0",
     "ui-router": "~0.2.13",
     "foundation": "~5.5.1",
-    "astromo-styles": "git@github.com:astromo/styles.git",
-    "astromo-dashboard-metrics": "git@github.com:astromo/astromo-dashboard-metrics.git"
+    "astromo-styles": "git@github.com:astromo/styles.git"
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0"

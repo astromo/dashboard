@@ -18,7 +18,7 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    vendor: 'app/vendor',
+    vendor: 'bower_components',
     dist: 'dist'
   };
 
@@ -70,6 +70,10 @@ module.exports = function (grunt) {
             return [
               require('connect-modrewrite')(['^[^\\.]*$ /index.html [L]']),
               connect.static('.tmp'),
+              connect().use(
+                '/bower_components',
+                connect.static('./bower_components')
+              ),
               connect.static(appConfig.app),
               require('grunt-connect-proxy/lib/utils').proxyRequest
             ];
@@ -287,7 +291,7 @@ module.exports = function (grunt) {
         dest: '<%= yeoman.app %>/scripts/config.js',
         wrap: true,
         constants: {
-          'metricsPath': 'vendor/astromo-dashboard-metrics/app/'
+          'metricsPath': 'vendor/dashboard-metrics/app/'
         }
       },
       dev: {

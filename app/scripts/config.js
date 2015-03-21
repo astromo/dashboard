@@ -3,7 +3,7 @@
 
 angular.module('config', [])
 
-.constant('metricsPath', 'vendor/astromo-dashboard-metrics/app/')
+.constant('metricsPath', 'vendor/dashboard-metrics/app/')
 
 ;
 })(angular);
