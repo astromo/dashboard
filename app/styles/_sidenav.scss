@@ -1,15 +1,15 @@
 .astromo-icon-bar {
-
   @include icon-bar(
-    $bar-bg: $darker-slate,
-    $bar-hover-color: $green
+    $bar-bg           : $darker-slate,
+    $bar-hover-color  : darken($darker-slate, 5),
+    $bar-active-color : $green,
+    $font-size        : 13px
   );
 }
 
 .dashboard__sidenav {
 
   .item {
-    text-align: left;
     line-height: 16px;
 
     i {
@@ -17,10 +17,9 @@
       font-size: 16px;
     }
     label {
-      font-size: 13px;
+      font-size: inherit;
       padding-left: 5px;
     }
-    i, label { display: inline-block; }
 
   }
 

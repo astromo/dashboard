@@ -11,7 +11,14 @@ angular
     $stateProvider
       .state('dashboard', {
         abstract    : true,
-        templateUrl : 'views/main.html',
+        views       : {
+          'sidenav' : {
+            templateUrl : 'partials/_sidenav.html'
+          },
+          'main' : {
+            template : '<div ui-view></div>'
+          }
+        },
         controller  : 'dashboard.mainController'
       })
       .state('dashboard.home', {
