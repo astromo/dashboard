@@ -1,0 +1,3 @@
+[submodule "app/modules/dashboard-metrics"]
+	path = app/modules/dashboard-metrics
+	url = git@github.com:astromo/dashboard-metrics.git
