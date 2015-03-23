@@ -6,7 +6,7 @@ angular
     'astromo.docs', 'ui.router', 'angular-jwt'
   ])
   .config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider,
-    jwtInterceptorProvider, $httpProvider) {
+    jwtInterceptorProvider, $httpProvider, $urlRouterProvider) {
 
     /**
      * Configure locationProvider and urlMatcher
@@ -27,25 +27,29 @@ angular
     };
     $httpProvider.interceptors.push('jwtInterceptor');
 
+    $urlRouterProvider.otherwise('/');
+
     /**
      * Configure ui-router states
      */
     $stateProvider
+      .state('login', {
+        url         : '/login',
+        templateUrl : 'views/login.html',
+        controller  : 'dashboard.loginController'
+      })
+      .state('logout', {
+        url         : '/logout',
+        controller  : 'dashboard.logoutController'
+      })
       .state('dashboard', {
         abstract    : true,
-        views       : {
-          'sidenav' : {
-            templateUrl : 'views/partials/_sidenav.html'
-          },
-          'main' : {
-            template   : '<div ui-view></div>',
-            controller : 'dashboard.mainController'
-          }
-        }
+        templateUrl : 'views/dashboard.html',
+        controller  : 'dashboard.mainController'
       })
       .state('dashboard.home', {
         url         : '',
-        templateUrl : 'views/home.html',
+        templateUrl : 'views/partials/_home.html',
         controller  : 'dashboard.homeController'
       })
       .state('dashboard.metrics', {
@@ -59,4 +63,15 @@ angular
         controller  : 'docs.mainController'
       });
 
+  }).run(function($rootScope, auth, $state) {
+
+    function locationChangeStartHandler(e) {
+      // check authentication before every location change
+      if (!auth.isAuthenticated()) {
+        e.preventDefault();
+        $state.go('login');
+      }
+    }
+
+    $rootScope.$on('$locationChangeStart', locationChangeStartHandler);
   });

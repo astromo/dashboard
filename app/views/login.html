@@ -1,0 +1,34 @@
+<div class="dashboard__login">
+
+  <div class="login__form">
+
+    <div class="row">
+      <div class="medium-4 small-10 small-centered columns">
+
+      <div data-alert class="alert-box alert radius" ng-show="error.message">
+        <div ng-bind="error.message"></div>
+      </div>
+
+      <form name="loginForm" novalidate>
+        <div class="row">
+          <div class="small-12 columns">
+
+            <label for="username">Username
+              <input ng-model="user.username" type="text" name="username" id="username" class="radius">
+            </label>
+
+            <label for="password">Password
+              <input ng-model="user.password" type="password" name="password" id="password" class="radius">
+            </label>
+
+            <button ng-click="authenticate(user)" class="small button radius">Login</button>
+          </div>
+        </div>
+      </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

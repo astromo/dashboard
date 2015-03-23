@@ -19,13 +19,7 @@
   </head>
   <body ng-app="dashboard">
 
-    <div class="astromo__dashboard">
-
-      <div ui-view="sidenav" class="dashboard__sidenav"></div>
-
-      <div ui-view="main" class="dashboard__main"></div>
-
-    </div>
+    <div class="astromo__dashboard" ui-view></div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -44,10 +38,12 @@
     <script src="scripts/app.js"></script>
 
     <!-- services -->
-    <script src="scripts/services/login.js"></script>
+    <script src="scripts/services/auth.js"></script>
 
     <!-- controllers -->
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/logout.js"></script>
     <script src="scripts/controllers/home.js"></script>
 
     <!-- metrics -->
