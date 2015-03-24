@@ -12,6 +12,11 @@ $header-font-family: 'Ubuntu', arial, sans-serif;
  * Astromo Components
  */
 
+// body styles for inherit attributes
+body {
+  font-family: 'Open Sans', arial, sans-serif;
+}
+
 @import '../../bower_components/astromo-styles/astromo';
 
 // Dashboard
