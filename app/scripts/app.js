@@ -2,7 +2,7 @@
 
 angular
   .module('dashboard', [
-    'ngAnimate', 'ngMessages', 'ngRoute', 'ngSanitize', 'astromo.metrics',
+    'ngAnimate', 'ngMessages', 'ngSanitize', 'astromo.metrics',
     'astromo.docs', 'ui.router', 'angular-jwt'
   ])
   .config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider,
@@ -17,14 +17,14 @@ angular
     /**
      * Configure jwt-token provider
      */
-    jwtInterceptorProvider.tokenGetter = function(config) {
+    jwtInterceptorProvider.tokenGetter = ['config', function(config) {
 
       // Don't send Authorization header on html template requests
       if (config.headers.Accept === 'text/html')
         return;
 
       return localStorage.getItem('astromo_token');
-    };
+    }];
     $httpProvider.interceptors.push('jwtInterceptor');
 
     $urlRouterProvider.otherwise('/');
