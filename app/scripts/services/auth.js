@@ -13,9 +13,12 @@ angular.module('dashboard')
 
     this.authenticate = function(user, callback) {
 
+      var username = user.username || '';
+      var password = user.password || '';
+
       $http.post(self.apiUrl + '/login', {
-        username: user.username,
-        password: user.password,
+        username: username,
+        password: password,
       })
       .success(function(res) {
         localStorage.setItem('astromo_token', res.token);

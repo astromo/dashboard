@@ -1,15 +1,17 @@
 <div class="dashboard__login">
+  <div data-alert class="login__alert alert-box alert" ng-show="error.message">
+    <div ng-bind="error.message"></div>
+  </div>
 
   <div class="login__form">
 
-    <div class="row">
-      <div class="medium-4 small-10 small-centered columns">
+    <img class="login__logo" src="images/astromo@2x.png" alt="ASTROMO">
 
-      <div data-alert class="alert-box alert radius" ng-show="error.message">
-        <div ng-bind="error.message"></div>
-      </div>
+    <div class="panel radius">
 
-      <form name="loginForm" novalidate>
+      <h2 class="form__header">Log In</h2>
+
+      <form name="loginForm">
         <div class="row">
           <div class="small-12 columns">
 
@@ -21,12 +23,13 @@
               <input ng-model="user.password" type="password" name="password" id="password" class="radius">
             </label>
 
-            <button ng-click="authenticate(user)" class="small button radius">Login</button>
+            <input type="submit" ng-click="authenticate(user)" class="huge button small-12 radius" value="Log In">
+            <small><a ui-sref="forgot-password">Forgot password?</a></small>
+
           </div>
         </div>
       </form>
 
-      </div>
     </div>
 
   </div>

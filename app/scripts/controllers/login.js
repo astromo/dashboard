@@ -4,6 +4,7 @@ angular.module('dashboard')
   .controller('dashboard.loginController', function($scope, auth, $state) {
 
     $scope.authenticate = function(user) {
+      user = user || {};
 
       $scope.error = null;
 
