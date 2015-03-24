@@ -2,7 +2,7 @@
 
 angular
   .module('dashboard', [
-    'ngAnimate', 'ngMessages', 'ngRoute', 'ngSanitize', 'astromo.metrics',
+    'ngAnimate', 'ngMessages', 'ngSanitize', 'astromo.metrics',
     'astromo.docs', 'ui.router', 'angular-jwt'
   ])
   .config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider,
@@ -17,14 +17,15 @@ angular
     /**
      * Configure jwt-token provider
      */
-    jwtInterceptorProvider.tokenGetter = function(config) {
+    jwtInterceptorProvider.tokenGetter = ['config', function(config) {
 
       // Don't send Authorization header on html template requests
       if (config.headers.Accept === 'text/html')
         return;
 
       return localStorage.getItem('astromo_token');
-    };
+    }];
+
     $httpProvider.interceptors.push('jwtInterceptor');
 
     $urlRouterProvider.otherwise('/');
@@ -38,6 +39,11 @@ angular
         templateUrl : 'views/login.html',
         controller  : 'dashboard.loginController'
       })
+      .state('forgot-password', {
+        url         : '/it-happens',
+        templateUrl : 'views/forgot.html',
+        controller  : 'dashboard.loginController'
+      })
       .state('logout', {
         url         : '/logout',
         controller  : 'dashboard.logoutController'
@@ -45,7 +51,8 @@ angular
       .state('dashboard', {
         abstract    : true,
         templateUrl : 'views/dashboard.html',
-        controller  : 'dashboard.mainController'
+        controller  : 'dashboard.mainController',
+        data: { mustAuthenticate: true }
       })
       .state('dashboard.home', {
         url         : '',
@@ -65,13 +72,16 @@ angular
 
   }).run(function($rootScope, auth, $state) {
 
-    function locationChangeStartHandler(e) {
+    function locationChangeStartHandler(e, to) {
+
+      var data = to.data || {};
+
       // check authentication before every location change
-      if (!auth.isAuthenticated()) {
+      if (data.mustAuthenticate && !auth.isAuthenticated()) {
         e.preventDefault();
         $state.go('login');
       }
     }
 
-    $rootScope.$on('$locationChangeStart', locationChangeStartHandler);
+    $rootScope.$on('$stateChangeStart', locationChangeStartHandler);
   });

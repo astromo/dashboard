@@ -1,4 +1,7 @@
 <div class="dashboard__login">
+  <div data-alert class="login__alert alert-box alert" ng-show="error.message">
+    <div ng-bind="error.message"></div>
+  </div>
 
   <div class="login__form">
 
@@ -6,13 +9,9 @@
 
     <div class="panel radius">
 
-      <div data-alert class="alert-box alert radius" ng-show="error.message">
-        <div ng-bind="error.message"></div>
-      </div>
-
       <h2 class="form__header">Log In</h2>
 
-      <form name="loginForm" novalidate>
+      <form name="loginForm">
         <div class="row">
           <div class="small-12 columns">
 
@@ -25,7 +24,7 @@
             </label>
 
             <input type="submit" ng-click="authenticate(user)" class="huge button small-12 radius" value="Log In">
-            <small><a href="/it-happens">Forgot password?</a></small>
+            <small><a ui-sref="forgot-password">Forgot password?</a></small>
 
           </div>
         </div>

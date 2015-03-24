@@ -2,6 +2,17 @@
   height: 100%;
   display: flex;
 
+  .login__alert {
+    position: absolute;
+    width: 100%;
+
+    text-align: center;
+    font-size: 15px;
+
+    background-color: $red;
+    border-color: transparent;
+  }
+
   .dashboard__main {
     flex: 1;
   }

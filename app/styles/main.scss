@@ -1,7 +1,10 @@
 /**
  * Settings
  */
-$header-font-family: 'Ubuntu', arial, sans-serif;
+$header-font-family  : 'Ubuntu', arial, sans-serif;
+$panel-border-style  : none;
+$button-border-style : none;
+$button-font-family  : inherit;
 
 /**
  * Vendor Components
@@ -11,13 +14,12 @@ $header-font-family: 'Ubuntu', arial, sans-serif;
 /**
  * Astromo Components
  */
+@import '../../bower_components/astromo-styles/astromo';
 
 // body styles for inherit attributes
 body {
   font-family: 'Open Sans', arial, sans-serif;
 }
-
-@import '../../bower_components/astromo-styles/astromo';
 
 // Dashboard
 @import 'dashboard';

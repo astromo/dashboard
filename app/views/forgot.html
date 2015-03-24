@@ -1,0 +1,31 @@
+<div class="dashboard__forgot">
+  <div data-alert class="forgot__alert alert-box alert" ng-show="error.message">
+    <div ng-bind="error.message"></div>
+  </div>
+
+  <div class="forgot__form">
+
+    <img class="login__logo" src="images/astromo@2x.png" alt="ASTROMO">
+
+    <div class="panel radius">
+
+      <h2 class="form__header">Forgot Password</h2>
+
+      <form name="forgotForm" novalidate>
+        <div class="row">
+          <div class="small-12 columns">
+
+            <label for="email">Email
+              <input ng-model="user.email" type="email" name="email" id="email" class="radius" required>
+            </label>
+
+            <input type="submit" ng-click="resend(user)" class="huge button small-12 radius" value="Send New Password">
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
