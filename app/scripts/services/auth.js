@@ -22,6 +22,7 @@ angular.module('dashboard')
         callback(null, res.token);
       })
       .error(function(err) {
+        err = err || new Error('Sorry, something went wrong');
         console.log(err);
         callback(err);
       });
