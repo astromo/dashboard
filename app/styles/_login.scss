@@ -4,11 +4,36 @@
 
   position: absolute;
 
+  background-color: $darker-slate;
+
+  .login__logo {
+    text-align: center;
+    width: 256px;
+
+    margin: 0 72px 30px 72px;
+  }
+
   .login__form {
     position: relative;
 
     top: 50%;
     transform: translateY(-50%);
+
+    width: 400px;
+    margin: 0 auto;
+
+    input[type=submit] {
+      margin-top: 10px;
+      background-color: $green;
+      border: none;
+    }
+  }
+
+  .form__header {
+    font-size: 28px;
+    text-align: center;
+
+    margin: 10px 0 20px 0;
   }
 
 }
