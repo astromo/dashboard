@@ -4,7 +4,9 @@
 
   position: absolute;
 
-  background-color: $darker-slate;
+  // background-color: $darker-slate;
+  background-image: url('../images/launch-slate.jpg');
+  background-position: bottom center;
 
   .login__logo, .forgot__logo {
     text-align: center;
