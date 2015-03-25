@@ -1,0 +1,12 @@
+.tmp/
+dist/
+node_modules/
+
+.dockerignore
+Dockerfile
+
+.git/
+.editorconfig
+.gitattributes
+.gitignore
+.gitmodules

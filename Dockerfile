@@ -1,5 +1,5 @@
-FROM nginx
+FROM node:0.10-onbuild
 
-COPY dist /usr/share/nginx/html
+RUN npm install -g grunt-cli
 
-EXPOSE 80 443
+EXPOSE 9000
