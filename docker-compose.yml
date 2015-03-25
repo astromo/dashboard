@@ -1,0 +1,7 @@
+web:
+  build: .
+
+  ports:
+    - "64001:443"
+
+  restart: always
