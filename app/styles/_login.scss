@@ -4,8 +4,7 @@
 
   position: absolute;
 
-  // background-color: $darker-slate;
-  background-image: url('../images/launch-slate.jpg');
+  background: url('../images/launch-slate.jpg') $darker-slate;
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,8 +26,11 @@
     margin: -32px auto 0 auto;
 
     input[type=submit] {
-      margin-top: 10px;
-      background-color: $green;
+      @include button(
+        $bg         : $green,
+        $radius     : true,
+        $full-width : true
+      );
     }
   }
 
