@@ -1,5 +1,5 @@
 <div class="dashboard__login">
-  <div data-alert class="login__alert alert-box alert" ng-show="error.message">
+  <div data-alert class="login__alert alert-box alert" ng-show="error">
     <div ng-bind="error.message"></div>
   </div>
 
@@ -23,7 +23,7 @@
               <input ng-model="user.password" type="password" name="password" id="password" class="radius">
             </label>
 
-            <input type="submit" ng-click="authenticate(user)" class="huge button small-12 radius" value="Log In">
+            <input ng-disabled="loading" type="submit" ng-click="authenticate(user)" class="huge button small-12 radius" value="Log In">
             <small><a ui-sref="forgot-password">Forgot password?</a></small>
 
           </div>

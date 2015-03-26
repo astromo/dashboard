@@ -11,6 +11,7 @@
 
     background-color: $red;
     border-color: transparent;
+    transition: none; // will cause angular to delay the component being hidden
   }
 
   .dashboard__main {

@@ -6,9 +6,11 @@ angular.module('dashboard')
     $scope.authenticate = function(user) {
       user = user || {};
 
-      $scope.error = null;
+      $scope.error   = null;
+      $scope.loading = true;
 
       auth.authenticate(user, function(err, token) {
+        $scope.loading = false;
 
         if (err)
           $scope.error = err;
