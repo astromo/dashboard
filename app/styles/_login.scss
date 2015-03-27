@@ -31,6 +31,8 @@
         $radius     : true,
         $full-width : true
       );
+
+      &:focus { outline: 0; }
     }
   }
 

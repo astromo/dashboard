@@ -8,6 +8,9 @@
 
     <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
@@ -28,14 +31,19 @@
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
     <script src="bower_components/ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/foundation/js/foundation.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/dashboard.js -->
     <script src="scripts/config.js"></script>
     <script src="scripts/app.js"></script>
+
+    <!-- models -->
+    <script src="scripts/models/user.js"></script>
 
     <!-- services -->
     <script src="scripts/services/auth.js"></script>
@@ -54,6 +62,10 @@
     <!-- documentation -->
     <script src="modules/dashboard-documentation/docs.js"></script>
     <script src="modules/dashboard-documentation/controllers/docs.js"></script>
+
+    <!-- profile -->
+    <script src="modules/dashboard-profile/profile.js"></script>
+    <script src="modules/dashboard-profile/controllers/profile.js"></script>
     <!-- endbuild -->
 </body>
 </html>

@@ -2,26 +2,36 @@
   height: 100%;
 
   .astromo-icon-bar {
+
+    .button { background-color: transparent; }
+
     @include icon-bar(
       $bar-bg           : $darker-slate,
       $bar-hover-color  : darken($darker-slate, 5),
       $bar-active-color : $green,
       $font-size        : 13px
     );
+
+    // profile dropdown menu
+    ul#profile {
+      padding: 0;
+      width: 160px;
+      border: none;
+
+      li > a { padding: 1.2rem; }
+    }
+
   }
 
   .item {
     line-height: 16px;
 
-    i {
-      font-style: normal;
-      font-size: 16px;
-    }
+    i { font-size: 16px; }
+
     label {
       font-size: inherit;
       padding-left: 5px;
     }
-
   }
 
 }

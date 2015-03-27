@@ -1,0 +1,19 @@
+<div class="dashboard__profile">
+
+  <h2>Profile</h2>
+
+  <img ng-src="{{ profile.avatar }}" alt="{{ profile.full_name }}" class="avatar">
+
+  <h3>
+    {{ profile.full_name }}<br>
+    <small>
+      <span class="profile__title">{{ profile.title }}</span>
+      {{ profile.title && profile.organisation.name ? 'at' : '' }}
+      <span class="profile__organisation" ng-bind="profile.organisation.name"></span>
+    </small>
+  </h3>
+
+  <p ng-bind="profile.email"></p>
+  <p>Member since {{ profile.created_at | date: 'longDate' }}</p>
+
+</div>

@@ -2,8 +2,8 @@
 
 angular
   .module('dashboard', [
-    'ngAnimate', 'ngMessages', 'ngSanitize', 'astromo.metrics',
-    'astromo.docs', 'ui.router', 'angular-jwt'
+    'ngAnimate', 'ngMessages', 'ngSanitize', 'ngResource', 'astromo.metrics',
+    'astromo.docs', 'astromo.profile', 'ui.router', 'angular-jwt'
   ])
   .config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider,
     jwtInterceptorProvider, $httpProvider, $urlRouterProvider) {
@@ -51,7 +51,10 @@ angular
         abstract    : true,
         templateUrl : 'views/dashboard.html',
         controller  : 'dashboard.mainController',
-        data: { mustAuthenticate: true }
+        data: { mustAuthenticate: true },
+        resolve: {
+          profile: function(User) { return User.get(); }
+        },
       })
       .state('dashboard.home', {
         url         : '',
@@ -67,6 +70,11 @@ angular
         url         : '/documentation',
         templateUrl : 'modules/dashboard-documentation/views/index.html',
         controller  : 'docs.mainController'
+      })
+      .state('dashboard.profile', {
+        url         : '/profile',
+        templateUrl : 'modules/dashboard-profile/views/index.html',
+        controller  : 'profile.mainController',
       });
 
   }).run(function($rootScope, auth, $state) {

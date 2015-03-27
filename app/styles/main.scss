@@ -21,6 +21,10 @@ body {
   font-family: 'Open Sans', arial, sans-serif;
 }
 
+i[data-icon] {
+  font-style: normal;
+}
+
 // Dashboard
 @import 'dashboard';
 @import '_login';
@@ -31,3 +35,6 @@ body {
 
 // Metrics
 @import '../modules/dashboard-metrics/styles/metrics';
+
+// Profile
+@import '../modules/dashboard-profile/styles/profile';
