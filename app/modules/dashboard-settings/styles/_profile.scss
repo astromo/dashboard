@@ -1,0 +1,22 @@
+.settings__profile {
+
+  .profile__details {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 40px;
+  }
+
+  .details__avatar, .details__edit {
+    width: 140px;
+    text-align: center;
+  }
+
+  img.avatar {
+    border-radius: 100%;
+
+    height : 100px;
+    width  : 100px;
+  }
+
+}

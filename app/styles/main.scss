@@ -1,20 +1,64 @@
 /**
+ * Astromo Components
+ */
+@import '../../bower_components/astromo-styles/astromo';
+
+/**
  * Settings
  */
 $header-font-family  : 'Ubuntu', arial, sans-serif;
+
 $panel-border-style  : none;
+
+// buttons
 $button-border-style : none;
 $button-font-family  : inherit;
+
+// tabs
+$tabs-navigation-bg-color        : rgba(0, 0, 0, 0);
+$tabs-navigation-active-bg-color : rgba(0, 0, 0, 0);
+
+// tables
+$table-head-bg     : #FFF;
+$table-bg          : #FCFCFC;
+$table-even-row-bg : #FFF;
 
 /**
  * Vendor Components
  */
 @import '../../bower_components/foundation/scss/foundation';
 
-/**
- * Astromo Components
- */
-@import '../../bower_components/astromo-styles/astromo';
+.button {
+  @include button(
+    $bg         : $green,
+    $radius     : true
+  );
+}
+
+.button.outline {
+  background-color: transparent;
+  border: solid 1px $green;
+  color: $green;
+
+  &:hover {
+    border: solid 1px $darker-green;
+    color: $darker-green;
+  }
+}
+
+.tabs .tab-title.active {
+  border-top: solid 2px $green;
+  border-left: solid 1px darken($almost-white, 5);
+  border-right: solid 1px darken($almost-white, 5);
+  border-bottom: none;
+}
+
+.tabs .tab-title {
+  border-bottom: solid 1px darken($almost-white, 5);
+}
+
+table { border-collapse: collapse; }
+table tr { border: solid 1px $gainsboro; }
 
 // body styles for inherit attributes
 body {
@@ -37,4 +81,4 @@ i[data-icon] {
 @import '../modules/dashboard-metrics/styles/metrics';
 
 // Profile
-@import '../modules/dashboard-profile/styles/profile';
+@import '../modules/dashboard-settings/styles/settings';

@@ -3,7 +3,7 @@
 angular
   .module('dashboard', [
     'ngAnimate', 'ngMessages', 'ngSanitize', 'ngResource', 'astromo.metrics',
-    'astromo.docs', 'astromo.profile', 'ui.router', 'angular-jwt'
+    'astromo.docs', 'astromo.settings', 'ui.router', 'angular-jwt'
   ])
   .config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider,
     jwtInterceptorProvider, $httpProvider, $urlRouterProvider) {
@@ -71,10 +71,19 @@ angular
         templateUrl : 'modules/dashboard-documentation/views/index.html',
         controller  : 'docs.mainController'
       })
-      .state('dashboard.profile', {
+      .state('dashboard.settings', {
+        abstract    : true,
+        url         : '/settings',
+        templateUrl : 'modules/dashboard-settings/views/index.html',
+        controller  : 'settings.mainController',
+      })
+      .state('dashboard.settings.profile', {
         url         : '/profile',
-        templateUrl : 'modules/dashboard-profile/views/index.html',
-        controller  : 'profile.mainController',
+        templateUrl : 'modules/dashboard-settings/views/profile.html'
+      })
+      .state('dashboard.settings.billing', {
+        url         : '/billing',
+        templateUrl : 'modules/dashboard-settings/views/billing.html'
       });
 
   }).run(function($rootScope, auth, $state) {

@@ -1,0 +1,28 @@
+<div class="settings__profile">
+
+  <div class="profile__details">
+
+    <div class="details__avatar">
+      <img ng-src="{{ profile.avatar }}" alt="{{ profile.full_name }}" class="avatar">
+    </div>
+
+    <div class="small-10 columns">
+      <h3>
+        {{ profile.full_name }}<br>
+        <small>
+          <span class="profile__title">{{ profile.title }}</span>
+          {{ profile.title && profile.organisation.name ? 'at' : '' }}
+          <span class="profile__organisation" ng-bind="profile.organisation.name"></span>
+        </small>
+      </h3>
+      <div ng-bind="profile.email"></div>
+      <div>Member since {{ profile.created_at | date: 'longDate' }}</div>
+    </div>
+
+  </div>
+
+  <div class="details__edit">
+    <a class="button small outline">Edit Profile</a>
+  </div>
+
+</div>

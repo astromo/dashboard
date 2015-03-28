@@ -16,13 +16,13 @@
     <label>Security</label>
   </a>
   <a ng-click="expandProfile()"
-    class="item button dropdown" ng-class="{ 'active' : state.includes('dashboard.profile') }"
+    class="item button dropdown" ng-class="{ 'active' : state.includes('dashboard.settings') }"
     data-dropdown="profile" data-options="pip: center"
     aria-controls="profile" aria-expanded="false">
     <label ng-bind="profile.full_name"></label>
   </a>
   <ul id="profile" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-    <li><a ui-sref="dashboard.profile">Profile</a></li>
+    <li><a ui-sref="dashboard.settings.profile">Profile</a></li>
     <li><a ui-sref="logout">Logout</a></li>
   </ul>
 </div>
