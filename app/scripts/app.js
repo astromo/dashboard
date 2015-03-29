@@ -33,6 +33,7 @@ angular
      * Configure Restangular provider
      */
     RestangularProvider.setBaseUrl('http://127.0.0.1:3000/');
+    RestangularProvider.setDefaultHttpFields({ cache: true });
 
     /**
      * Configure ui-router states
