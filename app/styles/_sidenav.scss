@@ -1,6 +1,13 @@
+$sidebar-width: 180px;
+
 .dashboard__sidenav {
   height: 100%;
-  max-width: 160px;
+  width: $sidebar-width;
+
+  .astromo__logo {
+    width  : auto !important;
+    height : auto !important;
+  }
 
   .astromo-icon-bar {
 
@@ -16,7 +23,7 @@
     // profile dropdown menu
     ul#profile {
       padding: 0;
-      width: 160px;
+      width: $sidebar-width;
       border: none;
 
       li > a { padding: 1.2rem; }

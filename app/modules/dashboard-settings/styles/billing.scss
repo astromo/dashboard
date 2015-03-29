@@ -1,7 +1,15 @@
 .settings__billing {
 
-  table thead th:nth-child(3),
-  table tbody tr td:nth-child(3) {
+  .billing__history {
+
+    thead th:nth-child(3),
+    tbody tr td:nth-child(3) {
+      text-align: center;
+    }
+
+  }
+
+  .invoices__empty {
     text-align: center;
   }
 

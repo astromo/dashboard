@@ -1,7 +1,7 @@
 <div class="settings__billing">
   <h3>Billing History</h3>
 
-  <table>
+  <table class="billing__history">
     <thead>
       <tr>
         <th width="200">Date</th>
@@ -11,20 +11,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>March 1, 2015</td>
-        <td>Invoice for March 2015</td>
-        <td>&euro; 40.00</td>
-        <td>
-          <i data-icon="&#xe085;"></i>
-        </td>
+      <tr ng-if="invoices.length < 1">
+        <td class="invoices__empty" colspan="4">You haven't received any invoices yet.</td>
       </tr>
-      <tr>
-        <td>Februaro 1, 2015</td>
-        <td>Invoice for February 2015</td>
-        <td>&euro; 40.00</td>
+      <tr ng-repeat="invoice in invoices">
+        <td ng-bind="invoice.date | date"></td>
+        <td ng-bind="invoice.description"></td>
+        <td ng-bind="invoice.amount | currency : '&euro; '"></td>
         <td>
-          <i data-icon="&#xe085;"></i>
+          <a ng-href="{{invoice.attachment}}" ng-show="invoice.attachment">
+            <i data-icon="&#xe085;"></i>
+          </a>
         </td>
       </tr>
     </tbody>

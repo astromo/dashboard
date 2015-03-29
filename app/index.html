@@ -27,11 +27,12 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/lodash/lodash.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/restangular/dist/restangular.min.js"></script>
     <script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
     <script src="bower_components/ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
@@ -42,9 +43,6 @@
     <script src="scripts/config.js"></script>
     <script src="scripts/app.js"></script>
 
-    <!-- models -->
-    <script src="scripts/models/user.js"></script>
-
     <!-- services -->
     <script src="scripts/services/auth.js"></script>
 
@@ -54,6 +52,7 @@
     <script src="scripts/controllers/logout.js"></script>
     <script src="scripts/controllers/forgot.js"></script>
     <script src="scripts/controllers/home.js"></script>
+    <script src="scripts/controllers/nav.js"></script>
 
     <!-- metrics -->
     <script src="modules/dashboard-metrics/metrics.js"></script>
@@ -66,6 +65,7 @@
     <!-- profile -->
     <script src="modules/dashboard-settings/settings.js"></script>
     <script src="modules/dashboard-settings/controllers/settings.js"></script>
+    <script src="modules/dashboard-settings/controllers/billing.js"></script>
     <!-- endbuild -->
 </body>
 </html>

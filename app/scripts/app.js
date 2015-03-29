@@ -2,11 +2,11 @@
 
 angular
   .module('dashboard', [
-    'ngAnimate', 'ngMessages', 'ngSanitize', 'ngResource', 'astromo.metrics',
-    'astromo.docs', 'astromo.settings', 'ui.router', 'angular-jwt'
+    'ngAnimate', 'ngMessages', 'ngSanitize', 'astromo.metrics',
+    'astromo.docs', 'astromo.settings', 'ui.router', 'angular-jwt', 'restangular'
   ])
   .config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider,
-    jwtInterceptorProvider, $httpProvider, $urlRouterProvider) {
+    jwtInterceptorProvider, $httpProvider, $urlRouterProvider, RestangularProvider) {
 
     /**
      * Configure locationProvider and urlMatcher
@@ -28,6 +28,11 @@ angular
     $httpProvider.interceptors.push('jwtInterceptor');
 
     $urlRouterProvider.otherwise('/');
+
+    /**
+     * Configure Restangular provider
+     */
+    RestangularProvider.setBaseUrl('http://127.0.0.1:3000/');
 
     /**
      * Configure ui-router states
@@ -53,7 +58,9 @@ angular
         controller  : 'dashboard.mainController',
         data: { mustAuthenticate: true },
         resolve: {
-          profile: function(User) { return User.get(); }
+          profile: function(Restangular) {
+            return Restangular.one('users', 'me').get();
+          }
         },
       })
       .state('dashboard.home', {
@@ -83,7 +90,13 @@ angular
       })
       .state('dashboard.settings.billing', {
         url         : '/billing',
-        templateUrl : 'modules/dashboard-settings/views/billing.html'
+        templateUrl : 'modules/dashboard-settings/views/billing.html',
+        controller  : 'settings.billingController',
+        resolve     : {
+          invoices: function(Restangular) {
+            return Restangular.one('users', 'me').getList('invoices');
+          }
+        }
       });
 
   }).run(function($rootScope, auth, $state) {

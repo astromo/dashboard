@@ -17,11 +17,15 @@ $button-font-family  : inherit;
 // tabs
 $tabs-navigation-bg-color        : rgba(0, 0, 0, 0);
 $tabs-navigation-active-bg-color : rgba(0, 0, 0, 0);
+$tabs-navigation-padding         : 0.9375rem;
+$tabs-content-padding            : $tabs-navigation-padding * 2;
 
 // tables
-$table-head-bg     : #FFF;
-$table-bg          : #FCFCFC;
-$table-even-row-bg : #FFF;
+$table-head-bg      : #FFF;
+$table-bg           : #FCFCFC;
+$table-even-row-bg  : #FFF;
+$table-row-padding  : 0.9375rem;
+$table-head-padding : $table-row-padding;
 
 /**
  * Vendor Components
@@ -35,22 +39,32 @@ $table-even-row-bg : #FFF;
   );
 }
 
-.button.outline {
+// TODO: move to shared styles repo
+@mixin button-outline($color) {
   background-color: transparent;
-  border: solid 1px $green;
-  color: $green;
+  border: solid 1px $color;
+  color: $color;
 
   &:hover {
-    border: solid 1px $darker-green;
-    color: $darker-green;
+    border: solid 1px darken($color, 10);
+    color: darken($color, 10);
   }
 }
 
+.button.outline {
+  @include button-outline($green);
+}
+
+.button.alert.outline {
+  @include button-outline($red);
+}
+
 .tabs .tab-title.active {
-  border-top: solid 2px $green;
-  border-left: solid 1px darken($almost-white, 5);
-  border-right: solid 1px darken($almost-white, 5);
-  border-bottom: none;
+  // border-top: solid 2px $green;
+  // border-left: solid 1px darken($almost-white, 5);
+  // border-right: solid 1px darken($almost-white, 5);
+  // border-bottom: none;
+  border-bottom: solid 2px $green;
 }
 
 .tabs .tab-title {
