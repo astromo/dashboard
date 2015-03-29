@@ -11,8 +11,6 @@ $sidebar-width: 180px;
 
   .astromo-icon-bar {
 
-    .button { background-color: transparent; }
-
     $bar-hover-color: darken($darker-slate, 5);
     @include icon-bar(
       $bar-bg           : $darker-slate,
@@ -26,11 +24,26 @@ $sidebar-width: 180px;
       padding-left: 18.75px;
     }
 
+    .item.item__profile {
+      @include dropdown-button(
+        $padding    : 'tiny',
+        $pip-color  : #FFF,
+        $base-style : true
+      );
+    }
+
     .item {
       padding-left: 21.75px;
       line-height: 16px;
 
       transition: background-color 0.3s ease-out;
+
+      i { font-size: 16px; }
+
+      label {
+        font-size: inherit;
+        padding-left: 5px;
+      }
     }
 
     // profile dropdown menu
@@ -42,16 +55,6 @@ $sidebar-width: 180px;
       li > a { padding: 1.2rem; }
     }
 
-  }
-
-  .item {
-
-    i { font-size: 16px; }
-
-    label {
-      font-size: inherit;
-      padding-left: 5px;
-    }
   }
 
 }
