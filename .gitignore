@@ -37,3 +37,6 @@ node_modules
 app/vendor
 
 *.sublime-*
+
+# Generated config script
+app/scripts/config.js
