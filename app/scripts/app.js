@@ -7,7 +7,8 @@ angular
     'angular-jwt', 'restangular'
   ])
   .config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider,
-    jwtInterceptorProvider, $httpProvider, $urlRouterProvider, RestangularProvider) {
+    jwtInterceptorProvider, $httpProvider, $urlRouterProvider, RestangularProvider,
+    apiBaseUrl) {
 
     /**
      * Configure locationProvider and urlMatcher
@@ -33,7 +34,7 @@ angular
     /**
      * Configure Restangular provider
      */
-    RestangularProvider.setBaseUrl('http://127.0.0.1:3000/');
+    RestangularProvider.setBaseUrl(apiBaseUrl);
     RestangularProvider.setDefaultHttpFields({ cache: false });
 
     /**

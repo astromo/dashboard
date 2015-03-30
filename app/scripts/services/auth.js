@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('dashboard')
-  .service('auth', function ($http) {
+  .service('auth', function ($http, apiBaseUrl) {
 
     var self = this;
 
-    this.apiUrl = 'http://localhost:3000';
+    this.apiUrl = apiBaseUrl;
 
     this.isAuthenticated = function() {
       return !!localStorage.getItem('astromo_token');
