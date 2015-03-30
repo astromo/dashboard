@@ -295,7 +295,9 @@ module.exports = function (grunt) {
         }
       },
       dev: {
-
+        constants: {
+          apiBaseUrl: 'http://192.168.33.10:3000'
+        }
       },
       prod: {
 
