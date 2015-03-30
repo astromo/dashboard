@@ -3,7 +3,8 @@
 angular
   .module('dashboard', [
     'ngAnimate', 'ngMessages', 'ngSanitize', 'astromo.metrics',
-    'astromo.docs', 'astromo.settings', 'ui.router', 'angular-jwt', 'restangular'
+    'astromo.config', 'astromo.docs', 'astromo.settings', 'ui.router',
+    'angular-jwt', 'restangular'
   ])
   .config(function ($stateProvider, $urlMatcherFactoryProvider, $locationProvider,
     jwtInterceptorProvider, $httpProvider, $urlRouterProvider, RestangularProvider) {

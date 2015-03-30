@@ -287,7 +287,7 @@ module.exports = function (grunt) {
     // Dynamic Anguar constants based on server environment
     ngconstant: {
       options: {
-        name: 'config',
+        name: 'astromo.config',
         dest: '<%= yeoman.app %>/scripts/config.js',
         wrap: true,
         constants: {
