@@ -17,9 +17,9 @@ module.exports = function (grunt) {
 
   // Configurable paths for the application
   var appConfig = {
-    app: require('./bower.json').appPath || 'app',
-    vendor: 'bower_components',
-    dist: 'dist'
+    app    : require('./bower.json').appPath || 'app',
+    vendor : 'bower_components',
+    dist   : 'dist'
   };
 
   // Define the configuration for all the tasks
@@ -30,9 +30,11 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
+      options: {
+        spawn: false
+      },
       js: {
         files: ['<%= yeoman.app %>/scripts/**/*.js', '<%= yeoman.app %>/modules/**/*.js'],
-        tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -75,37 +77,15 @@ module.exports = function (grunt) {
                 connect.static('./bower_components')
               ),
               connect.static(appConfig.app),
-              require('grunt-connect-proxy/lib/utils').proxyRequest
             ];
           }
         }
       },
-      proxies: [{
-        ws: true,
-        host: 'localhost',
-        port: 3000,
-        context: '/',
-        changeOrigin: true
-      }],
       dist: {
         options: {
           open: false,
           base: '<%= yeoman.dist %>'
         }
-      }
-    },
-
-    // Make sure code styles are up to par and there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: {
-        src: [
-          'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js'
-        ]
       }
     },
 
@@ -364,7 +344,6 @@ module.exports = function (grunt) {
       'ngconstant:dev',
       'concurrent:server',
       'autoprefixer',
-      // 'configureProxies:dist',
       'connect:livereload',
       'watch'
     ]);
