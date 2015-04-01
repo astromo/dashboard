@@ -31,7 +31,8 @@ module.exports = function (grunt) {
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       options: {
-        spawn: false
+        spawn: false,
+        livereload: true,
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/**/*.js', '<%= yeoman.app %>/modules/**/*.js'],
@@ -41,7 +42,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['<%= yeoman.app %>/styles/**/*.scss', '<%= yeoman.app %>/modules/**/styles/*.scss'],
-        tasks: ['sass:dev', 'autoprefixer']
+        tasks: ['sass:dev', 'autoprefixer'],
       },
       gruntfile: {
         files: ['Gruntfile.js']
