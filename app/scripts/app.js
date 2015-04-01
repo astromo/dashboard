@@ -69,7 +69,12 @@ angular
       .state('dashboard.home', {
         url         : '',
         templateUrl : 'views/partials/_home.html',
-        controller  : 'dashboard.homeController'
+        controller  : 'dashboard.homeController',
+        resolve     : {
+          metrics : function(Restangular) {
+            return Restangular.all('metrics').all('overview').getList();
+          }
+        }
       })
       .state('dashboard.metrics', {
         url         : '/metrics',
