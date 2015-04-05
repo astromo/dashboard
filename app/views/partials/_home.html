@@ -3,12 +3,10 @@
 
   <h3>Metrics for the last 5 minutes</h3>
 
-  <ul>
-    <li ng-repeat="metric in metrics">
-      <span ng-bind="metric.query"></span><br>
-      <span ng-bind="metric.result | number: 2"></span>
-    </li>
-  </ul>
+  <div class="home__metric" ng-repeat="metric in metrics">
+    <h4 ng-bind="metric.query"></h4>
+    <span class="subheader" ng-bind="metric.result | number: 2"></span>
+  </div>
+
 
 </div>
-

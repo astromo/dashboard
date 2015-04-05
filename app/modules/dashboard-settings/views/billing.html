@@ -19,7 +19,7 @@
         <td ng-bind="invoice.description"></td>
         <td ng-bind="invoice.amount | currency : '&euro; '"></td>
         <td>
-          <a ng-href="{{invoice.attachment}}" ng-show="invoice.attachment">
+          <a ng-href="{{invoice.attachment}}" ng-show="invoice.attachment" target="_blank">
             <i data-icon="&#xe085;"></i>
           </a>
         </td>

@@ -84,7 +84,26 @@ angular
       .state('dashboard.docs', {
         url         : '/documentation',
         templateUrl : 'modules/dashboard-documentation/views/index.html',
-        controller  : 'docs.mainController'
+        controller  : 'docs.mainController',
+        resolve     : {
+          blueprints : function(Restangular) {
+            return Restangular.one('users', 'me').getList('blueprints');
+          }
+        },
+        onEnter     : function($timeout, blueprints, $state) {
+          if (blueprints.length > 0) {
+            $timeout(function() {
+              var lastActive;
+              var slug = $state.params.blueprint || lastActive || blueprints[0].slug;
+              $state.go('dashboard.docs.blueprint', { blueprint: slug });
+            });
+          }
+        }
+      })
+      .state('dashboard.docs.blueprint', {
+        url         : '/:blueprint',
+        templateUrl : 'modules/dashboard-documentation/views/blueprint.html',
+        controller  : 'docs.blueprintController'
       })
       .state('dashboard.settings', {
         abstract    : true,
