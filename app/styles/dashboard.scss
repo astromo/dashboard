@@ -17,6 +17,7 @@
 
     position: relative;
     padding-top: 25px;
+    padding-bottom: 25px;
 
     @include grid-column($columns: 12);
   }

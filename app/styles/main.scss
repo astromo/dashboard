@@ -91,6 +91,9 @@ body {
   background-color: $almost-white;
 }
 
+// individual elements (TODO: move to astromo-styles repo)
+@import 'elements/boxed-list';
+
 // Dashboard
 @import 'dashboard';
 @import 'login';
