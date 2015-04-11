@@ -1,6 +1,4 @@
 .astromo__dashboard {
-  height: 100%;
-  display: flex;
 
   .login__alert {
     position: absolute;
@@ -16,12 +14,9 @@
 
   .dashboard__main {
     position: relative;
-    flex: 1;
+    padding-top: 25px;
 
-    padding: 20px 40px;
-
-    height: 100%;
-    overflow: auto;
+    @include grid-column($columns: 12);
   }
 
 }

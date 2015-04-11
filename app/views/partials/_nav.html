@@ -1,0 +1,57 @@
+<nav class="dashboard__nav top-bar" role="navigation">
+  <div class="row">
+    <div class="small-12 columns">
+
+    <ul class="title-area">
+      <li class="name">
+        <h1>
+          <a ui-sref="dashboard.home">
+            <img class="astromo__logo" src="images/astromo@2x.png" alt="Astromo">
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon">
+        <a href="#"><span>Menu</span></a>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+
+      <ul class="right">
+
+        <li
+          class="has-dropdown"
+          ng-class="{ 'active' : state.includes('dashboard.settings') }">
+          <a>
+            <img class="nav__avatar"
+              ng-src="{{ profile.avatar }}" alt="{{ profile.full_name }}">
+            <span ng-bind="profile.full_name"></span>
+          </a>
+          <ul class="dropdown" id="profile">
+            <li><a ui-sref="dashboard.settings.profile">Profile</a></li>
+            <li><a ui-sref="dashboard.settings.billing">Billing</a></li>
+            <li><a ui-sref="logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="left">
+        <li ui-sref-active="active" ui-sref="dashboard.home">
+          <a>Overview</a>
+        </li>
+        <li ui-sref-active="active" ui-sref="dashboard.metrics">
+          <a>Metrics</a>
+        </li>
+        <li ui-sref-active="active" ui-sref="dashboard.docs" ui-sref-opts="{ reload: true }">
+          <a>Documentation</a>
+        </li>
+        <li ui-sref-active="active">
+          <a>Security</a>
+        </li>
+      </ul>
+    </section>
+
+    </div>
+  </div>
+</nav>
+

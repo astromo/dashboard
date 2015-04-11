@@ -1,0 +1,20 @@
+.dashboard__nav {
+
+  .row { @include grid-row(); }
+
+  .nav__avatar {
+    max-width: 20px;
+    max-height: 20px;
+
+    border-radius: 100%;
+    margin-right: 5px;
+  }
+
+  ul.left > li.active a {
+    border-bottom: solid 2px $green;
+    height: $topbar-height;
+  }
+
+  .astromo__logo { max-width: 128px; margin-right: 20px; }
+
+}

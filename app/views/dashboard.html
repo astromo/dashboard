@@ -1,4 +1,8 @@
-<div class="dashboard__sidenav"
-  ng-include="'views/partials/_sidenav.html'"
-  ng-controller="dashboard.navController"></div>
-<div class="dashboard__main" ui-view></div>
+<div class="dashboard__nav"
+  ng-include="'views/partials/_nav.html'"
+  ng-controller="dashboard.navController">
+</div>
+
+<div class="row">
+  <div class="dashboard__main" ui-view></div>
+</div>

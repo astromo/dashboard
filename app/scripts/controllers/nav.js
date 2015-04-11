@@ -5,8 +5,4 @@ angular.module('dashboard')
 
     $scope.state = $state;
 
-    $scope.expand = function() {
-      $(document).foundation('dropdown', 'reflow');
-    };
-
   });

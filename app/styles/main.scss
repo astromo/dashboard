@@ -6,6 +6,7 @@
 /**
  * Settings
  */
+$body-font-family    : 'Open Sans', arial, sans-serif;
 $header-font-family  : 'Ubuntu', arial, sans-serif;
 
 $panel-border-style  : none;
@@ -26,6 +27,18 @@ $table-bg           : #FCFCFC;
 $table-even-row-bg  : #FFF;
 $table-row-padding  : 0.9375rem;
 $table-head-padding : $table-row-padding;
+
+// top bar
+$topbar-height      : 3.5rem;
+$topbar-bg-color    : $darker-slate;
+$topbar-dropdown-link-bg: $darker-slate;
+$topbar-dropdown-link-bg-hover: darken($darker-slate, 5);
+$topbar-dropdown-bg : $darker-slate;
+
+$topbar-link-bg-hover  : darken($darker-slate, 5);
+$topbar-link-bg-active : lighten($darker-slate, 5);
+$topbar-link-bg-active-hover: lighten($darker-slate, 5);
+$topbar-dropdown-label-bg: $darker-slate;
 
 /**
  * Vendor Components
@@ -60,10 +73,6 @@ $table-head-padding : $table-row-padding;
 }
 
 .tabs .tab-title.active {
-  // border-top: solid 2px $green;
-  // border-left: solid 1px darken($almost-white, 5);
-  // border-right: solid 1px darken($almost-white, 5);
-  // border-bottom: none;
   border-bottom: solid 2px $green;
 }
 
@@ -74,19 +83,15 @@ $table-head-padding : $table-row-padding;
 table { border-collapse: collapse; }
 table tr { border: solid 1px $gainsboro; }
 
-// body styles for inherit attributes
-body {
-  font-family: 'Open Sans', arial, sans-serif;
-}
-
 i[data-icon] {
   font-style: normal;
 }
 
 // Dashboard
 @import 'dashboard';
-@import '_login';
-@import '_sidenav';
+@import 'login';
+@import 'nav';
+// @import '_sidenav';
 
 // Home
 @import '_home';
