@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('dashboard')
-  .controller('dashboard.homeController', function($scope, metrics) {
+  .controller('dashboard.homeController', function($scope, metrics, blueprints) {
 
-    $scope.metrics = metrics;
+    $scope.blueprints = blueprints || [];
+    $scope.metrics    = metrics;
 
     console.log('home sweet home');
   });

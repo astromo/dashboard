@@ -1,5 +1,20 @@
 <div class="dashboard__home">
 
+  <!-- documentation overview -->
+  <section class="home__documentation">
+    <div class="boxed-list">
+      <h3>Your blueprints</h3>
+      <ul>
+        <li ng-show="blueprints.length === 0">
+          You don't have any blueprints yet.
+        </li>
+        <li ng-repeat="blueprint in blueprints">
+          <a ui-sref="dashboard.docs.blueprint({ blueprint: blueprint.slug })" ng-bind="blueprint.name"></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- activity overview -->
   <section class="home__activity">
 

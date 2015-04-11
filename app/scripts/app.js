@@ -73,6 +73,10 @@ angular
         resolve     : {
           metrics : function(Restangular) {
             return Restangular.all('metrics').all('overview').getList();
+          },
+          blueprints : function(Restangular) {
+            return Restangular.one('users', 'me').getList('blueprints',
+              { fields: 'name,slug' });
           }
         }
       })

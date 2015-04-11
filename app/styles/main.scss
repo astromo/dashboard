@@ -87,6 +87,10 @@ i[data-icon] {
   font-style: normal;
 }
 
+body {
+  background-color: $almost-white;
+}
+
 // Dashboard
 @import 'dashboard';
 @import 'login';
