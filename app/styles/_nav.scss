@@ -2,6 +2,11 @@
 
   .row { @include grid-row(); }
 
+  i[data-icon] {
+    line-height: $topbar-height;
+    margin-right: 3px;
+  }
+
   .nav__avatar {
     max-width: 20px;
     max-height: 20px;
