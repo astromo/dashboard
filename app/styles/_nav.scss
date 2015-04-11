@@ -1,7 +1,7 @@
 .dashboard__nav {
 
   @media #{$medium-up} {
-    min-width: 855px;
+    min-width: 900px;
   }
 
   .row { @include grid-row(); }
