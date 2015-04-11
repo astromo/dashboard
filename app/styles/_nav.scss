@@ -1,5 +1,9 @@
 .dashboard__nav {
 
+  @media #{$medium-up} {
+    min-width: 855px;
+  }
+
   .row { @include grid-row(); }
 
   i[data-icon] {
