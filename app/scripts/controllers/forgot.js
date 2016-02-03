@@ -1,10 +1,7 @@
-'use strict';
+'use strict'
 
 angular.module('dashboard')
-  .controller('dashboard.forgotController', function($scope) {
+  .controller('dashboard.forgotController', function ($scope) {
+    $scope.resend = function (user) {}
 
-    $scope.resend = function(user) {
-
-    };
-
-  });
+  })

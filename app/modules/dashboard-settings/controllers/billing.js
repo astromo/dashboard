@@ -1,9 +1,8 @@
-'use strict';
+'use strict'
 
 angular.module('astromo.settings')
-  .controller('settings.billingController', function($scope, invoices) {
+  .controller('settings.billingController', function ($scope, invoices) {
+    $scope.invoices = invoices
 
-    $scope.invoices = invoices;
-
-    console.log('and billing');
-  });
+    console.log('and billing')
+  })

@@ -1,3 +1,3 @@
-'use strict';
+'use strict'
 
-angular.module('astromo.settings', []);
+angular.module('astromo.settings', [])
